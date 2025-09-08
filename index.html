@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Simulador de Tributos e Taxas - Cristino Castro/PI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Simule tributos e taxas municipais de Cristino Castro/PI conforme a legislação vigente." />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="container">
+      <h1>Simulador de Tributos e Taxas</h1>
+      <p class="subtitle">Município de Cristino Castro/PI • Simulação baseada na tabela oficial de tributos e taxas</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1) Escolha o tributo/taxa</h2>
+      <div class="field">
+        <label for="taxSelect">Tributo/Taxa</label>
+        <select id="taxSelect" class="input"></select>
+      </div>
+      <p id="taxMeta" class="meta"></p>
+    </section>
+
+    <section class="card">
+      <h2>2) Informe os parâmetros</h2>
+      <div id="paramsArea" class="params"></div>
+    </section>
+
+    <section class="card">
+      <h2>3) Ajuste de alíquota/valor (simulação de política)</h2>
+      <div class="grid-2">
+        <div class="field">
+          <label for="adjustPercent">Variação simulada (%)</label>
+          <input type="range" id="adjustPercent" min="-50" max="50" value="0" step="1" />
+          <div class="help">Ajuste a alíquota ou valor para simular cenários (-50% a +50%).</div>
+        </div>
+        <div class="field">
+          <label>Variação aplicada</label>
+          <output id="adjustLabel">0%</output>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>4) Resultado</h2>
+      <div id="result" class="result">
+        <div class="result-line"><span>Valor:</span> <strong id="resultValue">—</strong></div>
+        <div class="result-line"><span>Periodicidade:</span> <strong id="resultPeriod">—</strong></div>
+        <div class="result-line"><span>Detalhes do cálculo:</span> <span id="resultDetails">—</span></div>
+      </div>
+      <div class="note">
+        Observação: Os dados, faixas e valores seguem fielmente a tabela oficial do município.<br>
+        Para dúvidas legais, consulte a legislação vigente.
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <p>© 2025 Simulador de Tributos e Taxas — Cristino Castro/PI • Uso educativo</p>
+    </div>
+  </footer>
+</body>
+</html>
